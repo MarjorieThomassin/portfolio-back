@@ -1,12 +1,12 @@
 require('dotenv').config();
 
 const express = require('express');
+const cors = require('cors');
 const connection = require('./db-config');
 
 const app = express();
-
 app.use(express.json());
-
+app.use(cors());
 
 const port = process.env.PORT || 8000;
 
@@ -29,9 +29,5 @@ app.listen(port, (err) => {
 const routes = require('./routes');
 
 app.use(routes);
-
-app.listen(port, () => {
-  console.log(`Server listening on port ${port}`);
-});
 
 module.exports = app;
