@@ -5,6 +5,9 @@ const connection = require('./db-config');
 
 const app = express();
 
+app.use(express.json());
+
+
 const port = process.env.PORT || 8000;
 
 connection.connect((err) => {
@@ -15,7 +18,17 @@ connection.connect((err) => {
   }
 });
 
-app.use(express.json());
+app.listen(port, (err) => {
+  if (err) {
+    console.error('Something bad happened');
+  } else {
+    console.log(`server is listening on ${port}`);
+  }
+});
+
+const routes = require('./routes');
+
+app.use(routes);
 
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
