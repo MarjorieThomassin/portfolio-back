@@ -8,8 +8,12 @@ routes.post('/', (req, res) => {
 
 const adminRoute = require('./admin');
 const loginRoute = require('./login');
+const hardskillRoute = require('./hardskill');
+const projectRoute = require('./project');
 
 routes.use('/admin', adminRoute);
 routes.use('/login', loginRoute);
+routes.use('/hardskill', hardskillRoute);
+routes.use('/project', projectRoute);
 
 module.exports = routes;

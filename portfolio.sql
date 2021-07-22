@@ -8,20 +8,20 @@ create table `admin` (
     password VARCHAR(100) NOT NULL
 );
 
-create table `hardskill` (
+create table hardskill(
     `id` INT NOT NULL AUTO_INCREMENT,
-    `name` VARCHAR(100) NOT NULL,
-    `description` VARCHAR(400) NOT NULL,
-    `image` text,
+    `skillName` VARCHAR(100) NOT NULL,
+    `skillDescription` VARCHAR(400) NOT NULL,
+    `imageSkill` text,
     PRIMARY KEY (`id`)
 );
 
 create table `project` (
     `id` INT NOT NULL AUTO_INCREMENT,
-    `name` VARCHAR(100) NOT NULL,
+    `nameProject` VARCHAR(100) NOT NULL,
     `image` text,
-    `started_at` VARCHAR(100) NOT NULL,
-    `ended_at` VARCHAR(100) NOT NULL,
+    `startedAt` VARCHAR(100) NOT NULL,
+    `endedAt` VARCHAR(100) NOT NULL,
     `description` VARCHAR(400) NOT NULL,
     `link` VARCHAR(100) NOT NULL,
     PRIMARY KEY (`id`)
